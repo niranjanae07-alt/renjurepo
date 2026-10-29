@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niranjana E | Developer Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#0b1220;--panel:#131e30;--mint:#68f0c1;--text:#f2f6ff;--muted:#9cabc1;--border:#26354a}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}.container{width:min(1100px,90%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:#0b1220ee;backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-inner{min-height:75px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 27px 'Space Grotesk',sans-serif}.logo span{color:var(--mint)}
+.nav-links{display:flex;gap:27px;align-items:center}.nav-links a{font-size:14px;color:var(--muted);transition:.25s}.nav-links a:hover{color:var(--mint)}
+.menu{display:none;color:var(--mint);background:transparent;border:0;font-size:26px;cursor:pointer}
+.hero{padding:95px 0 85px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}
+.status{display:inline-flex;gap:10px;align-items:center;color:var(--mint);border:1px solid #68f0c14c;background:#68f0c110;padding:7px 13px;border-radius:30px;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.status i{width:7px;height:7px;background:var(--mint);border-radius:50%;box-shadow:0 0 12px var(--mint)}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.2}h1{font-size:clamp(48px,7vw,78px);margin:25px 0 20px;letter-spacing:-3px}h1 span{color:var(--mint)}
+.hero-copy{color:var(--muted);max-width:520px;margin-bottom:28px}.buttons{display:flex;gap:13px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:700;font-size:14px;transition:.25s}.btn:hover{transform:translateY(-3px)}
+.primary{background:var(--mint);color:var(--bg)}.secondary{border:1px solid var(--border);background:var(--panel)}.hero-note{margin-top:25px;color:#8191a9;font-size:13px}
+.art{position:relative;min-height:360px;display:grid;place-items:center}.art-ring{width:290px;height:290px;border:1px solid #68f0c16b;border-radius:50%;position:absolute;animation:rotate 25s linear infinite}
+.art-ring:before{content:'';width:15px;height:15px;border-radius:50%;background:var(--mint);position:absolute;top:30px;left:30px;box-shadow:0 0 25px var(--mint)}
+.art-core{width:220px;height:220px;background:linear-gradient(140deg,#1c3446,#173e3b);border:1px solid #68f0c155;border-radius:30px;transform:rotate(-7deg);display:grid;place-items:center;box-shadow:0 25px 70px #0005}
+.art-core span{color:var(--mint);font:700 68px 'Space Grotesk',sans-serif;transform:rotate(7deg)}
+.code-card{position:absolute;bottom:18px;right:0;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:12px 15px;font:12px monospace;color:var(--mint);box-shadow:0 10px 35px #0003}
+@keyframes rotate{to{transform:rotate(360deg)}}section{padding:80px 0}
+.section-number{color:var(--mint);font:600 13px monospace;margin-bottom:12px}h2{font-size:clamp(34px,4vw,46px);margin-bottom:18px}.description{color:var(--muted);max-width:650px}
+.about-panel{margin-top:30px;padding:30px;background:var(--panel);border:1px solid var(--border);border-radius:18px}.about-panel p{color:var(--muted);margin-bottom:15px}.about-panel strong{color:var(--mint)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.tag{border:1px solid #68f0c14a;background:#68f0c10d;color:var(--mint);padding:7px 12px;border-radius:8px;font-size:12px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}.skill{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:23px 19px;transition:.3s}
+.skill:hover{transform:translateY(-7px);border-color:var(--mint)}.skill-icon{width:47px;height:47px;display:grid;place-items:center;background:#68f0c118;border:1px solid #68f0c13b;border-radius:12px;color:var(--mint);font:700 17px 'Space Grotesk',sans-serif;margin-bottom:20px}
+.skill h3{font-size:17px;margin-bottom:10px}.skill p{color:var(--muted);font-size:13px}
+.project-section{background:#0e1929}.project-card{margin-top:32px;display:grid;grid-template-columns:.8fr 1.2fr;overflow:hidden;background:var(--panel);border:1px solid var(--border);border-radius:18px}
+.project-art{min-height:280px;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,#68f0c122,transparent 65%),#101c2c;padding:25px}
+.screen{width:90%;max-width:270px;padding:15px;border:1px solid #68f0c14d;border-radius:12px;background:#0b1220;transform:rotate(-4deg);box-shadow:0 20px 45px #0004}
+.screen-top{display:flex;gap:5px;margin-bottom:18px}.screen-top span{width:7px;height:7px;border-radius:50%;background:var(--mint)}
+.screen-line{height:8px;background:#294354;border-radius:5px;margin:10px 0}.screen-line.short{width:55%}
+.screen-blocks{display:flex;gap:8px;margin-top:15px}.screen-blocks span{flex:1;height:40px;background:#173e3b;border-radius:6px}
+.project-info{padding:35px;align-self:center}.project-label{color:var(--mint);font:12px monospace;margin-bottom:15px}.project-info h3{font-size:28px;margin-bottom:15px}.project-info p{color:var(--muted);margin-bottom:20px}
+.tech{display:flex;gap:8px;flex-wrap:wrap}.tech span{border:1px solid var(--border);padding:5px 10px;border-radius:7px;font-size:12px;color:var(--mint)}
+.closing{padding:65px 35px;background:linear-gradient(130deg,#13283a,#132c2b);border:1px solid #68f0c13b;border-radius:20px;text-align:center}.closing h2{margin-bottom:15px}.closing p{max-width:550px;margin:0 auto 25px;color:var(--muted)}
+footer{text-align:center;padding:25px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}footer span{color:var(--mint)}
+.reveal{animation:appear .8s ease both}@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-art{min-height:320px}.skills-grid{grid-template-columns:repeat(2,1fr)}.project-card{grid-template-columns:1fr}.project-art{min-height:230px}}
+@media(max-width:560px){.nav-inner{min-height:68px}.menu{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;width:100%;background:var(--bg);border-bottom:1px solid var(--border);padding:20px;flex-direction:column}.nav-links.open{display:flex}.hero{padding:65px 0}section{padding:60px 0}.art-ring{width:250px;height:250px}.art-core{width:185px;height:185px}.art-core span{font-size:55px}.code-card{right:0;bottom:0}.skills-grid{gap:11px}.skill{padding:18px 14px}.project-info{padding:25px}.closing{padding:40px 20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="container nav-inner">
+<a href="#home" class="logo">niranjana<span>.</span></a>
+<button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+<div class="nav-links" id="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Journey</a></div>
+</div></nav>
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div class="reveal">
+<div class="status"><i></i> CSE Student · Learning & Building</div>
+<h1>Hi, I'm<br><span>Niranjana E.</span></h1>
+<p class="hero-copy">A curious learner exploring technology, programming, and web development. I'm here to turn ideas into something meaningful, one step at a time.</p>
+<div class="buttons"><a href="#projects" class="btn primary">Explore my work ↗</a><a href="#about" class="btn secondary">Get to know me</a></div>
+<p class="hero-note">Based in Palakkad, Kerala, India</p>
+</div>
+<div class="art reveal" aria-label="Decorative NE monogram"><div class="art-ring"></div><div class="art-core"><span>NE</span></div><div class="code-card">&lt; learn / build / repeat &gt;</div></div>
+</div></section>
+<section id="about"><div class="container">
+<div class="section-number">01 / ABOUT ME</div><h2>Curiosity meets code.</h2>
+<p class="description">I'm building my knowledge step by step and exploring how technology can solve everyday problems.</p>
+<div class="about-panel">
+<p>I'm <strong>Niranjana E</strong>, a Computer Science Engineering student at <strong>Jawaharlal College of Engineering and Technology</strong>.</p>
+<p>My current learning journey includes programming fundamentals and the building blocks of the web. I'm excited to keep improving, try new ideas, and turn what I learn into practical projects.</p>
+<div class="tags"><span class="tag">CSE Student</span><span class="tag">Palakkad, Kerala</span><span class="tag">Creative Thinker</span><span class="tag">Lifelong Learner</span></div>
+</div></div></section>
+<section id="skills"><div class="container">
+<div class="section-number">02 / MY TOOLKIT</div><h2>Skills I'm growing.</h2><p class="description">A foundation in programming and web technologies, with more to discover along the way.</p>
+<div class="skills-grid">
+<article class="skill"><div class="skill-icon">C</div><h3>C Programming</h3><p>Learning programming logic, algorithms, and problem-solving fundamentals.</p></article>
+<article class="skill"><div class="skill-icon">Py</div><h3>Python</h3><p>Exploring programming concepts and writing useful, readable code.</p></article>
+<article class="skill"><div class="skill-icon">&lt;/&gt;</div><h3>HTML</h3><p>Structuring content and creating the foundation of web pages.</p></article>
+<article class="skill"><div class="skill-icon">CSS</div><h3>CSS</h3><p>Styling websites with responsive layouts and thoughtful design.</p></article>
+</div></div></section>
+<section class="project-section" id="projects"><div class="container">
+<div class="section-number">03 / SELECTED WORK</div><h2>My learning project.</h2><p class="description">A first step in presenting my skills and progress online.</p>
+<article class="project-card">
+<div class="project-art" aria-hidden="true"><div class="screen"><div class="screen-top"><span></span><span></span><span></span></div><div class="screen-line short"></div><div class="screen-line"></div><div class="screen-line" style="width:75%"></div><div class="screen-blocks"><span></span><span></span><span></span></div></div></div>
+<div class="project-info"><div class="project-label">PROJECT 01 · PERSONAL WEBSITE</div><h3>Developer Portfolio</h3><p>A responsive portfolio website that introduces me, shares my current skills, and documents my journey as a Computer Science Engineering student. Designed to grow as I build more projects.</p><div class="tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span></div></div>
+</article></div></section>
+<section id="contact"><div class="container"><div class="closing reveal">
+<div class="section-number">04 / THE JOURNEY CONTINUES</div><h2>Always learning. Always building.</h2>
+<p>This is just the beginning. As I learn new skills and complete projects, this portfolio will grow with me.</p>
+<a href="#home" class="btn primary">Back to top ↑</a>
+</div></div></section>
+</main>
+<footer><div class="container">Designed with <span>♥</span> by Niranjana E · <span id="year"></span></div></footer>
+<script>
+const menu=document.getElementById('menu');
+const links=document.getElementById('links');
+menu.addEventListener('click',()=>{
+ const open=links.classList.toggle('open');
+ menu.setAttribute('aria-expanded',String(open));
+ menu.textContent=open?'×':'☰';
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+ links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';
+}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
